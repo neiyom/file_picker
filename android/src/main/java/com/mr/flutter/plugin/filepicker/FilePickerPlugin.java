@@ -117,24 +117,24 @@ public class FilePickerPlugin implements MethodChannel.MethodCallHandler, Flutte
     /**
      * Plugin registration.
      */
-    public static void registerWith(final io.flutter.plugin.common.PluginRegistry.Registrar registrar) {
+    // public static void registerWith(final io.flutter.plugin.common.PluginRegistry.Registrar registrar) {
 
-        if (registrar.activity() == null) {
-            // If a background flutter view tries to register the plugin, there will be no activity from the registrar,
-            // we stop the registering process immediately because the ImagePicker requires an activity.
-            return;
-        }
+    //     if (registrar.activity() == null) {
+    //         // If a background flutter view tries to register the plugin, there will be no activity from the registrar,
+    //         // we stop the registering process immediately because the ImagePicker requires an activity.
+    //         return;
+    //     }
 
-        final Activity activity = registrar.activity();
-        Application application = null;
-        if (registrar.context() != null) {
-            application = (Application) (registrar.context().getApplicationContext());
-        }
+    //     final Activity activity = registrar.activity();
+    //     Application application = null;
+    //     if (registrar.context() != null) {
+    //         application = (Application) (registrar.context().getApplicationContext());
+    //     }
 
-        final FilePickerPlugin plugin = new FilePickerPlugin();
-        plugin.setup(registrar.messenger(), application, activity, registrar, null);
+    //     final FilePickerPlugin plugin = new FilePickerPlugin();
+    //     plugin.setup(registrar.messenger(), application, activity, registrar, null);
 
-    }
+    // }
 
 
     @SuppressWarnings("unchecked")
