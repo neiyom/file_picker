@@ -22,6 +22,9 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
 android {
     namespace 'com.mr.flutter.plugin.filepicker'
     compileSdkVersion 34
@@ -37,11 +40,21 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
 
+// Kotlin JVM target configuration for Gradle 8+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
+
+dependencies {
+    implementation 'androidx.core:core:1.0.2'
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation "androidx.lifecycle:lifecycle-runtime:2.1.0"
+}
+
 
 dependencies {
     implementation 'androidx.core:core:1.0.2'
