@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.5.2'
     }
 }
 
@@ -21,24 +21,9 @@ rootProject.allprojects {
 
 apply plugin: 'com.android.library'
 
-android {
-    //compileSdkVersion 33
+android {   
 
-    defaultConfig {
-        //minSdkVersion 16
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-    lintOptions {
-        disable 'InvalidPackage'
-    }
-    
-    dependencies {
-        implementation 'androidx.core:core:1.0.2'
-        implementation 'androidx.annotation:annotation:1.0.0'
-        implementation "androidx.lifecycle:lifecycle-runtime:2.1.0"
-    }
-
-    //namespace 'com.mr.flutter.plugin.filepicker'
+    namespace 'com.mr.flutter.plugin.filepicker'
     compileSdkVersion 34
 
     defaultConfig {
@@ -56,5 +41,11 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+     dependencies {
+        implementation 'androidx.core:core:1.0.2'
+        implementation 'androidx.annotation:annotation:1.0.0'
+        implementation "androidx.lifecycle:lifecycle-runtime:2.1.0"
     }
 }
