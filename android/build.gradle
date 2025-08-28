@@ -6,9 +6,9 @@ buildscript {
         google()
         mavenCentral()
     }
-
     dependencies {
         classpath 'com.android.tools.build:gradle:8.5.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24"
     }
 }
 
@@ -20,14 +20,13 @@ rootProject.allprojects {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
-android {   
-
+android {
     namespace 'com.mr.flutter.plugin.filepicker'
     compileSdkVersion 34
 
     defaultConfig {
-        applicationId "com.example.app"
         minSdkVersion 21
         targetSdkVersion 34
         versionCode 1
@@ -42,10 +41,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+}
 
-     dependencies {
-        implementation 'androidx.core:core:1.0.2'
-        implementation 'androidx.annotation:annotation:1.0.0'
-        implementation "androidx.lifecycle:lifecycle-runtime:2.1.0"
-    }
+dependencies {
+    implementation 'androidx.core:core:1.0.2'
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation "androidx.lifecycle:lifecycle-runtime:2.1.0"
 }
